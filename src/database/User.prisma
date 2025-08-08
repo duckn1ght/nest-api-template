@@ -1,0 +1,15 @@
+model User {
+    id       String   @id @default(uuid())
+    email    String   @unique
+    role     UserRole @default(CUSTOMER)
+    name     String?
+    password String
+    age      Int?
+
+    @@map("users")
+}
+
+enum UserRole {
+    CUSTOMER
+    ADMIN
+}
